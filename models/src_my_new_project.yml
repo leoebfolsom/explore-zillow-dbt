@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: zillow_share
+    database: zillow_share
+    tables:
+      - name: for_sale_inventory
