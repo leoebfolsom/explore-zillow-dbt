@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_distinct_listings
+    columns:
+      - name: statename
+        tests:
+          - not_null
+      - name: regionname
+        tests:
+          - not_null
+      - name: value
+        tests:
+          - not_null
+      - name: month
+        tests:
+          - not_null
