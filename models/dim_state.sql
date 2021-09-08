@@ -3,5 +3,5 @@ SELECT
     MIN(VALUE) AS MIN_VALUE, 
     MAX(VALUE) AS MAX_VALUE, 
     COUNT(*) AS number_of_listings 
-FROM FOR_SALE_INVENTORY 
-GROUP BY 1;
+FROM {{ source('zillow_share_source', 'for_sale_inventory')}}
+GROUP BY 1

@@ -1,7 +1,8 @@
 version: 2
 
 sources:
-  - name: zillow_share
+  - name: zillow_share_source
+    schema: public
     database: zillow_share
     tables:
       - name: for_sale_inventory
