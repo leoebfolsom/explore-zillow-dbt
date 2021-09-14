@@ -1,13 +1,11 @@
-WITH states AS (
-    select * from {{ ref('stg_states') }}
-),
-distinct_listings AS (
-    select * from {{ ref('stg_distinct_listings') }}
+with listings as (
+    select * from {{ ref('stg_listings') }}
 )
-SELECT 
-    STATENAME, 
-    MIN(VALUE) AS MIN_VALUE, 
-    MAX(VALUE) AS MAX_VALUE, 
-    COUNT(*) AS number_of_listings
-FROM distinct_listings
-GROUP BY 1
+select
+    dl.statename, 
+    min(dl.value) as min_value, 
+    max(dl.value) as max_value,
+    count(distinct regionname) as distinct_zips,
+    count(*) as number_of_listings
+from listings dl
+group by 1

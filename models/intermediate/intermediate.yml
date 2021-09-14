@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_state_month_summary
+    description: Summary statistics about listings associated with state-month combinations.
+    columns:
+      - name: statename
+      - name: month
+      - name: mean_value
+      - name: median_value
+      - name: num_listings
