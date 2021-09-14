@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: dim_state
+    description: A table that captures summary/aggregate attributes for each state. There is one record per unique state.
     columns:
       - name: statename
         description: Two-digit abbreviations, one for each of the 50 states.

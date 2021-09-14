@@ -21,7 +21,7 @@ models:
         tests:
           - not_null
   - name: stg_months
-    descriptionL: A table with all unique values from the month column of the for_sale_inventory table.
+    description: A table with all unique values from the month column of the for_sale_inventory table.
     columns:
       - name: month
         description: Values indiciating the month and year with the format YYYY-MM.

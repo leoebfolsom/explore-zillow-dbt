@@ -7,3 +7,6 @@ sources:
     database: zillow_share
     tables:
       - name: for_sale_inventory
+        description: 
+        description: >-
+          From `https://www.zillow.com/research/data/`: "A smoothed, seasonally adjusted measure of the typical home value and market changes across a given region and housing type."
