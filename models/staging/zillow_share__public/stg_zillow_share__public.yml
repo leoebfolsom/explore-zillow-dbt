@@ -22,6 +22,7 @@ models:
           - not_null
           - unique
   - name: stg_states
+    description: a list of all unique states--should be 50
     columns:
       - name: statename
         tests:
