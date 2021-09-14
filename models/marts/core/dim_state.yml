@@ -17,7 +17,31 @@ models:
         description: The maximum value associated with a state.
         tests:
           - not_null
+      - name: mean_value
+        description: The average (mean) value associated with a state.
+        tests:
+          - not_null
+      - name: median_value
+        description: The average (median) value associated with a state.
+        tests:
+          - not_null
+      - name: distinct_zips
+        description: The number of distinct zips (regionnames) associated with a state.
+        tests:
+          - not_null
       - name: number_of_listings
         description: The number of distinct listings associated with a state.
+        tests:
+          - not_null
+      - name: top_median_value_month
+        description: The month with the highest median value listing for a state.
+        tests:
+          - not_null
+      - name: top_mean_value_month
+        description: The month with the highest mean value listing for a state.
+        tests:
+          - not_null
+      - name: top_num_listings_month
+        description: The month with the most listings for a state.
         tests:
           - not_null
