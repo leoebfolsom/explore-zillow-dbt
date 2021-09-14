@@ -4,15 +4,19 @@ models:
   - name: dim_state
     columns:
       - name: statename
+        description: Two-digit abbreviations, one for each of the 50 states.
         tests:
           - not_null
           - unique
       - name: min_value
+        description: The minimum value associated with a state.
         tests:
           - not_null
       - name: max_value
+        description: The maximum value associated with a state.
         tests:
           - not_null
       - name: number_of_listings
+        description: The number of distinct listings associated with a state.
         tests:
           - not_null

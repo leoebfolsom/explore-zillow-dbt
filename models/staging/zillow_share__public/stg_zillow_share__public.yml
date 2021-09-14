@@ -2,35 +2,45 @@ version: 2
 
 models:
   - name: stg_distinct_listings
+    description: All unique combinations of statename, regionname, value, and month in the for_sale_inventory table.
     columns:
       - name: statename
+        description: '{{ doc("states_abbreviations") }}'
         tests:
           - not_null
       - name: regionname
+        description: Five-character numeric zip codes.
         tests:
           - not_null
       - name: value
+        description: A numeric value associated with the home (we think it should be x$1,000).
         tests:
           - not_null
       - name: month
+        description: The month and year associated with the listing (YYYY-MM).
         tests:
           - not_null
   - name: stg_months
+    descriptionL: A table with all unique values from the month column of the for_sale_inventory table.
     columns:
       - name: month
+        description: Values indiciating the month and year with the format YYYY-MM.
         tests:
           - not_null
           - unique
   - name: stg_states
-    description: a list of all unique states--should be 50
+    description: A table with all unique values from the statename column of the for_sale_inventory table.
     columns:
       - name: statename
+        description: Two-digit abbreviations, one for each of the 50 states.
         tests:
           - accepted_values: 
               values: ['NY','IL','TX','TN','FL','NC','GA','CA','OK','AZ','MD','VA','NJ','MA','CO','MI','OH','NM','OR','NV','DC','SC','KY','AL','ND','AR','DE','LA','MS','ME','IA','RI','NH','NE','MO','KS','PA','CT','WA','MN','ID','MT','HI','UT','WV','SD','WY','AK','VT','WI']
   - name: stg_zips
+    description: A table with all unique values (zip codes) from the regionname column of the for_sale_inventory table.
     columns:
       - name: regionname
+        description: Five-character numeric zip codes.
         tests:
           - not_null
           - unique
