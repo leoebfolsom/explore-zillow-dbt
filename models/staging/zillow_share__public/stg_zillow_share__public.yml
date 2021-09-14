@@ -1,35 +1,25 @@
 version: 2
 
 models:
-  - name: stg_distinct_listings
+  - name: stg_listings
+    description: All combinations of statename, regionname, value, and month in the for_sale_inventory table.
     columns:
       - name: statename
+        description: '{{ doc("states_abbreviations") }}'
         tests:
           - not_null
+          - accepted_values:
+              values: ['NY','IL','TX','TN','FL','NC','GA','CA','OK','AZ','MD','VA','NJ','MA','CO','MI','OH','NM','OR','NV','DC','SC','KY','AL','ND','AR','DE','LA','MS','ME','IA','RI','NH','NE','MO','KS','PA','CT','WA','MN','ID','MT','HI','UT','WV','SD','WY','AK','VT','WI']
       - name: regionname
+        description: '{{ doc("regionname") }}'
         tests:
           - not_null
       - name: value
+        description: '{{ doc("value") }}'
         tests:
           - not_null
       - name: month
+        description: '{{ doc("month") }}'
         tests:
-          - not_null
-  - name: stg_months
-    columns:
-      - name: month
-        tests:
-          - not_null
-          - unique
-  - name: stg_states
-    columns:
-      - name: statename
-        tests:
-          - accepted_values: 
-              values: ['NY','IL','TX','TN','FL','NC','GA','CA','OK','AZ','MD','VA','NJ','MA','CO','MI','OH','NM','OR','NV','DC','SC','KY','AL','ND','AR','DE','LA','MS','ME','IA','RI','NH','NE','MO','KS','PA','CT','WA','MN','ID','MT','HI','UT','WV','SD','WY','AK','VT','WI']
-  - name: stg_zips
-    columns:
-      - name: regionname
-        tests:
-          - not_null
-          - unique
+          - not_null          
+

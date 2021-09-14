@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: int_state_month_summary
+    description: Summary statistics about listings associated with state-month combinations.
+    columns:
+      - name: statename
+        description: '{{ doc("statename") }}'
+        tests:
+          - not_null
+      - name: month
+        description: '{{ doc("month") }}'
+        tests:
+          - not_null
+      - name: mean_value
+        description: Mean value of listing for state-month combination.
+        tests:
+          - not_null
+      - name: median_value
+        description: Median value of listing for state-month combination.
+        tests:
+          - not_null
+      - name: num_listings
+        description: Number of listings for state-month combination.
+        tests:
+          - not_null
