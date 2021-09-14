@@ -5,7 +5,7 @@ models:
     description: A table that captures summary/aggregate attributes for each state. There is one record per unique state.
     columns:
       - name: statename
-        description: Two-digit abbreviations, one for each of the 50 states.
+        description: '{{ doc("states_abbreviations") }}'
         tests:
           - not_null
           - unique

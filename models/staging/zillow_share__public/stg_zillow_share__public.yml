@@ -5,7 +5,7 @@ models:
     description: All unique combinations of statename, regionname, value, and month in the for_sale_inventory table.
     columns:
       - name: statename
-        description: '{{ doc("states_abbreviations") }}'
+        description: '{{ doc("statename") }}'
         tests:
           - not_null
       - name: regionname
@@ -17,7 +17,7 @@ models:
         tests:
           - not_null
       - name: month
-        description: The month and year associated with the listing (YYYY-MM).
+        description: '{{ doc("month") }}'
         tests:
           - not_null
   - name: stg_months
@@ -32,7 +32,7 @@ models:
     description: A table with all unique values from the statename column of the for_sale_inventory table.
     columns:
       - name: statename
-        description: Two-digit abbreviations, one for each of the 50 states.
+        description: '{{ doc("states_abbreviations") }}'
         tests:
           - accepted_values: 
               values: ['NY','IL','TX','TN','FL','NC','GA','CA','OK','AZ','MD','VA','NJ','MA','CO','MI','OH','NM','OR','NV','DC','SC','KY','AL','ND','AR','DE','LA','MS','ME','IA','RI','NH','NE','MO','KS','PA','CT','WA','MN','ID','MT','HI','UT','WV','SD','WY','AK','VT','WI']
@@ -40,7 +40,7 @@ models:
     description: A table with all unique values (zip codes) from the regionname column of the for_sale_inventory table.
     columns:
       - name: regionname
-        description: Five-character numeric zip codes.
+        description: '{{ doc("regionname") }}'
         tests:
           - not_null
           - unique
