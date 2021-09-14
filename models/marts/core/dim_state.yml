@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: dim_state
+    columns:
+      - name: statename
+        tests:
+          - not_null
+          - unique
+      - name: min_value
+        tests:
+          - not_null
+      - name: max_value
+        tests:
+          - not_null
+      - name: number_of_listings
+        tests:
+          - not_null
