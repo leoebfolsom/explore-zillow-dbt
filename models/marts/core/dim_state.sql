@@ -1,5 +1,5 @@
 with listings as (
-    select * from {{ ref('stg_listings') }}
+    select * from {{ ref('stg_zillow_share_listings') }}
 ),
 state_month_summary as (
     select * from {{ ref('int_state_month_summary') }} 

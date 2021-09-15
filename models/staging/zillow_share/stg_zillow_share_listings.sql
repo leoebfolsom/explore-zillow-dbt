@@ -1,4 +1,4 @@
-with listings as (
+with stg_zillow_share_listings as (
     select 
         statename, 
         regionname, 
@@ -6,4 +6,4 @@ with listings as (
         month
     from {{ source('zillow_share_source', 'for_sale_inventory')}}
 )
-select * from listings
+select * from stg_zillow_share_listings
