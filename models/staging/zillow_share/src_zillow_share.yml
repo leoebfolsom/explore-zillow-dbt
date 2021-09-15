@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: zillow_share_source
+  - name: zillow_share
     description: Zillow data from Snowflake Marketplace. `https://app.snowflake.com/marketplace/listing/GZSNZ6U9JA?search=zillow`
     schema: public
     database: zillow_share
