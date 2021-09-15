@@ -1,9 +1,9 @@
-WITH listings AS (
-    SELECT 
-        STATENAME, 
-        REGIONNAME, 
-        VALUE, 
-        MONTH
-    FROM {{ source('zillow_share_source', 'for_sale_inventory')}}
+with listings as (
+    select 
+        statename, 
+        regionname, 
+        value, 
+        month
+    from {{ source('zillow_share_source', 'for_sale_inventory')}}
 )
-SELECT * FROM listings
+select * from listings

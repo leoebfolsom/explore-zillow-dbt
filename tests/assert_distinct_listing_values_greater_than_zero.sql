@@ -1,6 +1,6 @@
-SELECT 
-    VALUE
-FROM
+select 
+    value
+from
     {{ ref('stg_listings') }}
-WHERE
-    VALUE <= 0 OR VALUE IS NULL
+where
+    value <= 0 or value is null
