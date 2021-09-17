@@ -1,6 +1,6 @@
-SELECT 
-    VALUE
-FROM
-    {{ ref('stg_listings') }}
-WHERE
-    VALUE <= 0 OR VALUE IS NULL
+select 
+    value
+from
+    {{ ref('stg_zillow_share_listings') }}
+where
+    value <= 0 or value is null

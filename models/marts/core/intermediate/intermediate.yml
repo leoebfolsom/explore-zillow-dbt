@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: int_state_month_summary
+    description: Summary statistics about each state-month combination's listings.
+    columns:
+      - name: statename
+        description: '{{ doc("statename") }}'
+        tests:
+          - not_null
+      - name: month
+        description: '{{ doc("month") }}'
+        tests:
+          - not_null
+      - name: mean_value
+        description: Mean value of listing for state-month combination.
+        tests:
+          - not_null
+      - name: median_value
+        description: Median value of listing for state-month combination.
+        tests:
+          - not_null
+      - name: num_listings
+        description: Number of listings for state-month combination.
+        tests:
+          - not_null
+  - name: int_rank_months_within_each_state
+    description: For each state, rank months by various categories.
+    columns:
+      - name: statename
+        description: '{{ doc("statename") }}'
+        tests:
+          - not_null
+      - name: month
+        description: '{{ doc("month") }}'
+        tests:
+          - not_null
+      - name: rank_median_value_month
+        description: Rank within each state of the month's median value. For example, the month with the highest median value in the state of Nebraska out of all the months on record would have a value of 1.
+        tests:
+          - not_null
+      - name: rank_mean_value_month
+        description: Rank within each state of the month's mean value. For example, the month with the highest mean value in the state of Nebraska out of all the months on record would have a value of 1.
+        tests:
+          - not_null
+      - name: rank_num_listings_month
+        description: Rank within each state of the month's number of listings. For example, the month with the highest number of listings in the state of Nebraska out of all the months on record would have a value of 1.
+        tests:
+          - not_null
+  - name: int_state_listings_summary
+    description: Summary statistics about each state's listings.
+    columns:
+      - name: statename
+        description: '{{ doc("statename") }}'
+        tests:
+          - not_null
+      - name: min_value
+        description: The minimum value listing associated with the state.
+        tests:
+          - not_null
+      - name: max_value
+        description: The maximum value listing associated with the state.
+        tests:
+          - not_null
+      - name: mean_value
+        description: The mean value listing associated with the state.
+        tests:
+          - not_null
+      - name: median_value
+        description: The median value listing associated with the state.
+        tests:
+          - not_null
+      - name: distinct_zips
+        description: The number of distinct zip codes associated with the state.
+        tests:
+          - not_null
+      - name: number_of_listings
+        description: The number of listings associated with the state.
+        tests:
+          - not_null

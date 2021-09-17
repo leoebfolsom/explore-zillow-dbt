@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_listings
+  - name: stg_zillow_share_listings
     description: All combinations of statename, regionname, value, and month in the for_sale_inventory table.
     columns:
       - name: statename

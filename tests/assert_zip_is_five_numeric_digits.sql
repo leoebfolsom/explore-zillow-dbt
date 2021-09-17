@@ -1,6 +1,6 @@
-SELECT 
-    REGIONNAME
-FROM
-    {{ ref('stg_listings') }}
-WHERE 
-    REGIONNAME LIKE '%[^0-9]%' OR LEN(REGIONNAME) != 5
+select 
+    regionname
+from
+    {{ ref('stg_zillow_share_listings') }}
+where 
+    regionname like '%[^0-9]%' or len(regionname) != 5
